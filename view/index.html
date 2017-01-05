@@ -1,12 +1,35 @@
 <p>Hello world</p>
 
+<input type="text" name="rss" value="http://rss.cnn.com/rss/money_markets.rss">
+<main></main>
+
 <script type="text/javascript" src="/js/primus.js"></script>
 
 <script type="text/javascript">
 	
 const primus = new Primus()
+let feeds = []
+const main = document.querySelector('main')
+
 primus.on('data', (data) => {
-	console.log(data)
+	if (data.action === 'feed') {
+		feeds.push(data)
+		const div = document.createElement('li')
+		div.innerHTML = data.results.title
+		main.appendChild(div)
+	}
 })
+const input = document.querySelector('input[name=rss]')
+input.addEventListener('input', (evt) => {
+	console.log(evt.currentTarget.value)
+	if (!evt.currentTarget.value.trim().length) {
+		return false
+	}
+	main.innerHTML = ""
+	primus.write({
+		action: 'fetch', 
+		url: evt.currentTarget.value
+	})
+}, false)
 
 </script>
