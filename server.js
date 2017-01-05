@@ -10,7 +10,7 @@ import path from 'path'
 import co from 'co'
 import errors from './modules/errors.js'
 
-import primus from './modules/primus'
+import Primus from './modules/primus'
 
 const PORT = process.env.PORT
 const app = new Koa()
@@ -41,8 +41,7 @@ app.use(async (ctx, next) => {
 // save the client side primus code so its available
 // to the html page
 
-const server = http.createServer(app.callback())
-primus(server)
+const server = Primus(http.createServer(app.callback()))
 
 server.listen(PORT, () => {
   console.log(`listening to port *:${PORT}.\npress ctrl + c to cancel.`)

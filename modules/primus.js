@@ -65,5 +65,5 @@ export default (server) => {
 
   primus.on('disconnection', onDisconnected)
 
-  return primus
+  return server
 }
