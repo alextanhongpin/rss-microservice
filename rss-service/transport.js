@@ -26,7 +26,11 @@ export default (server) => {
 
     spark.on('data', ({ action, payload }) => {
       if (action === 'server:get_all') {
-        service.all(payload.urls, (error, response) => {
+        // Handle request
+        const urls = payload.urls.map((url) => {
+          return url.trim()
+        }).filter(url => url)
+        service.all(urls, (error, response) => {
           if (error) {
             spark.write({
               action: 'client:get_all',
