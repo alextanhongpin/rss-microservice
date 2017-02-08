@@ -11,7 +11,7 @@ const primus = new Primus()
 const main = document.querySelector('main')
 
 primus.on('data', (data) => {
-	if (data.action === 'feed') {
+	if (data.action === 'client:get_all') {
 		console.log(data)
 		const div = document.createElement('li')
 		div.innerHTML = data.results.title
@@ -30,10 +30,10 @@ input.addEventListener('input', (evt) => {
 		return false
 	}
 	console.log(urls)
-	main.innerHTML = ""
+	main.innerHTML = ''
 	primus.write({
-		action: 'fetch', 
-		urls: urls
+		action: 'server:get_all', 
+		payload: { urls }
 	})
 }, false)
 

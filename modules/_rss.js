@@ -7,7 +7,7 @@ const rss = (url, callback) => {
   const feedparser = new FeedParser()
 
   req.on('error', function (err) {
-  // handle any request errors
+    // handle any request errors
     callback(err, null)
   })
 

@@ -10,7 +10,7 @@ import path from 'path'
 import co from 'co'
 import errors from './modules/errors.js'
 
-import Primus from './modules/primus'
+import RssService from './rss-service/transport'
 
 const PORT = process.env.PORT
 const app = new Koa()
@@ -24,6 +24,7 @@ render(app, {
   cache: false,
   debug: true
 })
+
 app.context.render = co.wrap(app.context.render)
 
 app
@@ -40,8 +41,7 @@ app.use(async (ctx, next) => {
 
 // save the client side primus code so its available
 // to the html page
-
-const server = Primus(http.createServer(app.callback()))
+const server = RssService(http.createServer(app.callback()))
 
 server.listen(PORT, () => {
   console.log(`listening to port *:${PORT}.\npress ctrl + c to cancel.`)
