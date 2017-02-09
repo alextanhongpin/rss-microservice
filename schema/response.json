@@ -1,0 +1,188 @@
+{
+  "action": "client:get_all",
+  "payload": {
+    "feeds": {
+      "author": null,
+      "categories": [],
+      "comments": null,
+      "date": "2017-02-06T14:26:35.000Z",
+      "description": "Takata is zeroing in on Key Safety Systems, a Detroit-based company, to help it deal with its massive airbag recall crisis.<img src=\"http://feeds.feedburner.com/~r/rss/money_markets/~4/fF62Qv51We4\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "enclosures": [],
+      "feedburner:origlink": {
+        "#": "http://money.cnn.com/2017/02/06/autos/takata-key-safety-systems-buyer/index.html?section=money_markets",
+        "@": {}
+      },
+      "guid": "http://money.cnn.com/2017/02/06/autos/takata-key-safety-systems-buyer/index.html?section=money_markets",
+      "image": {
+        "url": "http://i2.cdn.turner.com/money/dam/assets/150602112018-takata-airbag-120x90.jpg"
+      },
+      "link": "http://rss.cnn.com/~r/rss/money_markets/~3/fF62Qv51We4/index.html",
+      "media:thumbnail": {
+        "@": {
+          "height": "90",
+          "url": "http://i2.cdn.turner.com/money/dam/assets/150602112018-takata-airbag-120x90.jpg",
+          "width": "120"
+        }
+      },
+      "meta": {
+        "#ns": [
+          {
+            "xmlns:media": "http://search.yahoo.com/mrss/"
+          },
+          {
+            "xmlns:feedburner": "http://rssnamespace.org/feedburner/ext/1.0"
+          },
+          {
+            "xmlns:atom10": "http://www.w3.org/2005/Atom"
+          },
+          {
+            "xmlns:atom10": "http://www.w3.org/2005/Atom"
+          }
+        ],
+        "#type": "rss",
+        "#version": "2.0",
+        "#xml": {
+          "encoding": "ISO-8859-1",
+          "version": "1.0"
+        },
+        "@": [
+          {
+            "xmlns:media": "http://search.yahoo.com/mrss/"
+          },
+          {
+            "xmlns:feedburner": "http://rssnamespace.org/feedburner/ext/1.0"
+          }
+        ],
+        "atom10:link": [
+          {
+            "@": {
+              "href": "http://rss.cnn.com/rss/money_markets",
+              "rel": "self",
+              "type": "application/rss+xml",
+              "xmlns:atom10": "http://www.w3.org/2005/Atom"
+            }
+          },
+          {
+            "@": {
+              "href": "http://pubsubhubbub.appspot.com/",
+              "rel": "hub",
+              "xmlns:atom10": "http://www.w3.org/2005/Atom"
+            }
+          }
+        ],
+        "author": null,
+        "categories": [],
+        "cloud": {
+          "href": "http://pubsubhubbub.appspot.com/",
+          "type": "hub"
+        },
+        "copyright": "\ufffd 2017 Cable News Network LP, LLLP.",
+        "date": "2017-02-09T13:36:12.000Z",
+        "description": "CNNMoney.com, the business website of CNN, combines business news and in-depth market analysis with practical advice and answers to personal finance questions.",
+        "favicon": null,
+        "feedburner:info": {
+          "@": {
+            "uri": "rss/money_markets"
+          }
+        },
+        "generator": null,
+        "image": {
+          "title": "Latest stock market news from Wall Street - CNNMoney.com",
+          "url": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif"
+        },
+        "language": "en-us",
+        "link": "http://money.cnn.com/markets/?section=money_markets",
+        "pubDate": "2017-02-09T13:36:12.000Z",
+        "pubdate": "2017-02-09T13:36:12.000Z",
+        "rss:@": {},
+        "rss:copyright": {
+          "#": "\ufffd 2017 Cable News Network LP, LLLP.",
+          "@": {}
+        },
+        "rss:description": {
+          "#": "CNNMoney.com, the business website of CNN, combines business news and in-depth market analysis with practical advice and answers to personal finance questions.",
+          "@": {}
+        },
+        "rss:image": {
+          "@": {},
+          "description": {
+            "#": "CNNMoney.com, the business website of CNN, combines business news and in-depth market analysis with practical advice and answers to personal finance questions.",
+            "@": {}
+          },
+          "height": {
+            "#": "30",
+            "@": {}
+          },
+          "link": {
+            "#": "http://money.cnn.com/markets/?section=money_markets",
+            "@": {}
+          },
+          "title": {
+            "#": "Latest stock market news from Wall Street - CNNMoney.com",
+            "@": {}
+          },
+          "url": {
+            "#": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+            "@": {}
+          },
+          "width": {
+            "#": "144",
+            "@": {}
+          }
+        },
+        "rss:language": {
+          "#": "en-us",
+          "@": {}
+        },
+        "rss:link": {
+          "#": "http://money.cnn.com/markets/?section=money_markets",
+          "@": {}
+        },
+        "rss:pubdate": {
+          "#": "Thu, 09 Feb 2017 08:36:12 EST",
+          "@": {}
+        },
+        "rss:title": {
+          "#": "Latest stock market news from Wall Street - CNNMoney.com",
+          "@": {}
+        },
+        "rss:ttl": {
+          "#": "10",
+          "@": {}
+        },
+        "title": "Latest stock market news from Wall Street - CNNMoney.com",
+        "xmlUrl": "http://rss.cnn.com/rss/money_markets",
+        "xmlurl": "http://rss.cnn.com/rss/money_markets"
+      },
+      "origlink": "http://money.cnn.com/2017/02/06/autos/takata-key-safety-systems-buyer/index.html?section=money_markets",
+      "pubDate": "2017-02-06T14:26:35.000Z",
+      "pubdate": "2017-02-06T14:26:35.000Z",
+      "rss:@": {},
+      "rss:description": {
+        "#": "Takata is zeroing in on Key Safety Systems, a Detroit-based company, to help it deal with its massive airbag recall crisis.<img src=\"http://feeds.feedburner.com/~r/rss/money_markets/~4/fF62Qv51We4\" height=\"1\" width=\"1\" alt=\"\"/>",
+        "@": {}
+      },
+      "rss:guid": {
+        "#": "http://money.cnn.com/2017/02/06/autos/takata-key-safety-systems-buyer/index.html?section=money_markets",
+        "@": {
+          "ispermalink": "false"
+        }
+      },
+      "rss:link": {
+        "#": "http://rss.cnn.com/~r/rss/money_markets/~3/fF62Qv51We4/index.html",
+        "@": {}
+      },
+      "rss:pubdate": {
+        "#": "Mon, 06 Feb 2017 09:26:35 EST",
+        "@": {}
+      },
+      "rss:title": {
+        "#": "U.S. firm is frontrunner to buy Japan's Takata",
+        "@": {}
+      },
+      "source": {},
+      "summary": "Takata is zeroing in on Key Safety Systems, a Detroit-based company, to help it deal with its massive airbag recall crisis.<img src=\"http://feeds.feedburner.com/~r/rss/money_markets/~4/fF62Qv51We4\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "title": "U.S. firm is frontrunner to buy Japan's Takata"
+    }
+  }
+}
