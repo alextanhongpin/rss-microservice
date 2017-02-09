@@ -11,11 +11,25 @@ const primus = new Primus()
 const main = document.querySelector('main')
 
 primus.on('data', (data) => {
+	console.log(data)
 	if (data.action === 'client:get_all') {
-		console.log(data)
-		const div = document.createElement('li')
-		div.innerHTML = data.results.title
-		main.appendChild(div)
+		if (data.payload && data.payload.feeds) {
+			const div = document.createElement('li')
+			const rss = data.payload.feeds
+			const title = rss.title
+			const summary = rss.summary
+			const image = rss.image.url
+			const origLink = rss.meta.origLink
+			const pubDate = rss.meta.pubDate
+			div.innerHTML = `
+				<h4>${title}</h4>
+				<p>${summary}</p>
+				<img src='${image}'/>
+				<a href='${origLink}'>${origLink}</a>
+			`
+
+			main.appendChild(div)
+		}
 	}
 })
 const input = document.querySelector('input[name=rss]')

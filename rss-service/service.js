@@ -28,7 +28,7 @@ class RssService {
   }
   all (urls, callback) {
     urls.forEach((url) => {
-      this.rss(url, (error, feed) => {
+      this.one(url, (error, feed) => {
         if (error) {
           callback(error, null)
         } else {

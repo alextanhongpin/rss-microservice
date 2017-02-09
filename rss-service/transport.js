@@ -1,6 +1,7 @@
 
 import Primus from 'primus'
 import Service from './service.js'
+// import path from 'path'
 
 const service = Service()
 
@@ -20,7 +21,7 @@ const onConnected = (spark) => {
 export default (server) => {
   const primus = new Primus(server, { parser: 'JSON' })
 
-  // primus.save(__dirname + '/public/js/primus.js')
+  // primus.save(path.join(__dirname, '..', '/public/js/primus.js'))
   primus.on('connection', (spark) => {
     onConnected(spark)
 
