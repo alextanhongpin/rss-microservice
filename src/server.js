@@ -15,10 +15,10 @@ import RssService from './rss-service/transport'
 const PORT = process.env.PORT
 const app = new Koa()
 
-app.use(serve(path.join(__dirname, 'public')))
+app.use(serve(path.join(__dirname, '..', 'public')))
 
 render(app, {
-  root: path.join(__dirname, 'view'),
+  root: path.join(__dirname, '..', 'view'),
   layout: 'template',
   viewExt: 'html',
   cache: false,
