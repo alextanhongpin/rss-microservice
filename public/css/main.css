@@ -1,0 +1,136 @@
+body {
+  font-family: 'Avenir', 'Helvetica', arial;
+}
+
+*, *:before, *:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.search {
+  width: 100%;
+  height: 40px;
+  font-size: 24px;
+  font-family: 'Avenir', 'Helvetica', arial;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.header {
+  background: black;
+  color: white;
+  padding: 0 20px;
+  height: 60px;
+  line-height: 60px;
+}
+
+.title {
+  font-size: 24px;
+}
+
+.hint {
+  color: #ff4444;
+}
+.description {
+  font-size: 18px;
+  color: #717171;
+}
+
+.info {
+  font-size: 14px;
+  color: #A6A6A6;
+}
+.link,
+.link:active,
+.link:visited {
+  color: #FF2C00;
+}
+
+.recent-searches__item {
+  background: #FFEAE5;
+  border-radius: 3px;
+  display: inline-block;
+  padding: 5px;
+  margin: 2.5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+/*
+ * List Styling:Start
+**/
+
+.list {
+  width: 100%;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.list:hover {
+  background: rgba(0, 0, 0, .05);
+}
+.list-column--left {
+  max-width: 160px;
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+}
+.list-column--right {
+  max-width: calc(100% - 180px);
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 0 0 10px;
+}
+.list-photo {
+  width: 160px;
+  height: 160px;
+  display: block;
+  border-radius: 5px;
+  background: #C2C2C2;
+  background-size: cover;
+  background-position: center center;
+}
+
+
+/*
+ * List Styling:End
+**/
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 18px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .info {
+    font-size: 12px;
+  }
+
+  .list-column--left {
+    max-width: 80px;
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+  }
+  .list-column--right {
+    max-width: calc(100% - 100px);
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 0 0 10px;
+  }
+  .list-photo {
+    width: 80px;
+    height: 80px;
+    display: block;
+    border-radius: 5px;
+    background: #C2C2C2;
+    background-size: cover;
+    background-position: center center;
+  }
+}

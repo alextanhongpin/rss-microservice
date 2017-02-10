@@ -1,55 +1,13 @@
-<p>Hello world</p>
+<header class='header'>
+  <h1>RSS Insight</h1>
+</header>
 
-<input type="text" name="rss" value="http://rss.cnn.com/rss/money_markets.rss">
+<input class="search" type="search" name="rss" value="http://rss.cnn.com/rss/money_markets.rss">
+<p class='hint'></p>
+<div class='recent-searches'></div>
+
 <main></main>
 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
 <script type="text/javascript" src="/js/primus.js"></script>
-
-<script type="text/javascript">
-	
-const primus = new Primus()
-// const primus = new Primus('ws://mysterious-lowlands-59375.herokuapp.com/')
-const main = document.querySelector('main')
-
-primus.on('data', (data) => {
-	console.log(data)
-	if (data.action === 'client:get_all') {
-		if (data.payload && data.payload.feeds) {
-			const div = document.createElement('li')
-			const rss = data.payload.feeds
-			const title = rss.title
-			const summary = rss.summary
-			const image = rss.image.url
-			const origLink = rss.meta.origLink
-			const pubDate = rss.meta.pubDate
-			div.innerHTML = `
-				<h4>${title}</h4>
-				<p>${summary}</p>
-				<img src='${image}'/>
-				<a href='${origLink}'>${origLink}</a>
-			`
-
-			main.appendChild(div)
-		}
-	}
-})
-const input = document.querySelector('input[name=rss]')
-input.addEventListener('input', (evt) => {
-	if (!evt.currentTarget.value.trim().length) {
-		return false
-	}
-	const urls = evt.currentTarget.value.split(',').map((url) => {
-		return url.trim()
-	}).filter(url => url.length)
-	if (!urls.length) {
-		return false
-	}
-	console.log(urls)
-	main.innerHTML = ''
-	primus.write({
-		action: 'server:get_all', 
-		payload: { urls }
-	})
-}, false)
-
-</script>
+<script type="text/javascript" src="/js/main.js"></script>

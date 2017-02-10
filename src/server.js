@@ -1,44 +1,30 @@
-require("babel-polyfill")
+require('babel-polyfill')
 import http from 'http'
+import path from 'path'
 import Koa from 'koa'
-import Router from 'koa-router'
-import render from 'koa-ejs'
+
 import logger from 'koa-logger'
 import parser from 'koa-bodyparser'
 import serve from 'koa-static'
 
-import path from 'path'
-import co from 'co'
 import errors from './modules/errors.js'
+import setupTemplate from './modules/template.js'
 
-import RssService from './rss-service/transport'
+import RssService from './rss-service/transport.js'
+import endpoint from './rss-service/endpoint.js'
 
 const PORT = process.env.PORT
 const app = new Koa()
 
-app.use(serve(path.join(__dirname, '..', 'public')))
-
-render(app, {
-  root: path.join(__dirname, '..', 'view'),
-  layout: 'template',
-  viewExt: 'html',
-  cache: false,
-  debug: true
-})
-
-app.context.render = co.wrap(app.context.render)
+setupTemplate(app)
 
 app
+.use(serve(path.join(__dirname, '..', 'public')))
 .use(errors())
 // .use(logger())
 .use(parser())
-
-// Catch-All Route
-app.use(async (ctx, next) => {
-  await ctx.render('index', {
-    title: 'Hello'
-  })
-})
+.use(endpoint.routes())
+.use(endpoint.allowedMethods())
 
 // save the client side primus code so its available
 // to the html page

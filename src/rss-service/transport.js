@@ -26,23 +26,25 @@ export default (server) => {
     onConnected(spark)
 
     spark.on('data', ({ action, payload }) => {
-      if (action === 'server:get_all') {
+      if (action === 'server:subscribe') {
         // Handle request
-        const urls = payload.urls.map((url) => {
-          return url.trim()
-        }).filter(url => url)
-        service.all(urls, (error, response) => {
+        const urls = payload.urls
+        .map(url => url.trim())
+        .filter(url => url)
+
+        service.one(urls[0], (error, response) => {
           if (error) {
+            console.log('service:error', error)
             spark.write({
-              action: 'client:get_all',
+              action: 'client:publish',
               payload: null,
-              error: error 
+              error: error.message
             })
           } else {
             spark.write({
-              action: 'client:get_all',
+              action: 'client:publish',
               payload: {
-                feeds: response
+                rss: response
               }
             })
           }
