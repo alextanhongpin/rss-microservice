@@ -48,7 +48,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 require('babel-polyfill');
 
-
 var PORT = process.env.PORT;
 var app = new _koa2.default();
 
