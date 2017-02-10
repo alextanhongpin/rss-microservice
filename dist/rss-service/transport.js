@@ -42,25 +42,27 @@ exports.default = function (server) {
       var action = _ref.action,
           payload = _ref.payload;
 
-      if (action === 'server:get_all') {
+      if (action === 'server:subscribe') {
         // Handle request
         var urls = payload.urls.map(function (url) {
           return url.trim();
         }).filter(function (url) {
           return url;
         });
-        service.all(urls, function (error, response) {
+
+        service.one(urls[0], function (error, response) {
           if (error) {
+            console.log('service:error', error);
             spark.write({
-              action: 'client:get_all',
+              action: 'client:publish',
               payload: null,
-              error: error
+              error: error.message
             });
           } else {
             spark.write({
-              action: 'client:get_all',
+              action: 'client:publish',
               payload: {
-                feeds: response
+                rss: response
               }
             });
           }

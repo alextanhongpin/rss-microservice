@@ -28,16 +28,24 @@ var RssService = function () {
 
   _createClass(RssService, [{
     key: 'one',
-    value: function one(url, callback) {
-      var rssRequest = (0, _request2.default)(url);
-      var feed = new _feedparser2.default();
 
-      rssRequest.on('error', function (error) {
+    // Get a rss response
+    value: function one(url, callback) {
+      var rssRequest = null;
+      var feed = new _feedparser2.default();
+      try {
+        rssRequest = (0, _request2.default)(url);
+      } catch (error) {
         return callback(error, null);
+      }
+      rssRequest.on('error', function (error) {
+        console.log('RequestError', error);
+        callback(error, null);
       });
       rssRequest.on('response', function (res) {
         var isSuccess = res.statusCode === 200;
         if (!isSuccess) {
+          console.log('Error: Unable to fetch feed');
           this.emit('error', new Error('Unable to fetch RSS for' + url));
         } else {
           this.pipe(feed);
@@ -55,6 +63,8 @@ var RssService = function () {
         }
       });
     }
+    // Get a list of rss responses
+
   }, {
     key: 'all',
     value: function all(urls, callback) {
