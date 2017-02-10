@@ -5,11 +5,11 @@ This is a simple RSS feed reader with koa.js and Primus.
 
 You have to include the primus code on the client side to use this feature.
 
-The api is hosted (here)[https://mysterious-lowlands-59375.herokuapp.com/]
+The api is hosted [here]( https://rss-service.herokuapp.com/)
 
 To connect to the RSS, just add the websocket connection:
 ```
-const primus = new Primus('ws://mysterious-lowlands-59375.herokuapp.com/')
+const primus = new Primus('ws://rss-service.herokuapp.com/')
 ```
 
 To publish to the websocket event:
