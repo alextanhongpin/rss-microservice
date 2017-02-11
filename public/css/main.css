@@ -1,14 +1,30 @@
+/*
+ * Reset:Start;
+**/
 body {
-  font-family: 'Avenir', 'Helvetica', arial;
+  font-family: 'Avenir', 'Helvetica', Arial;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+/*
+ * Reset:End;
+**/
 
-.search {
+.wrapper {
+  text-align: center;
+}
+.col-12 {
+  max-width: 960px;
+  text-align: left;
+  margin: auto;
+}
+.search-input {
   width: 100%;
   height: 40px;
   font-size: 24px;
@@ -98,6 +114,9 @@ body {
  * List Styling:End
 **/
 
+/*
+ * Responsive:Start
+**/
 @media (max-width: 600px) {
   .title {
     font-size: 18px;
@@ -134,3 +153,83 @@ body {
     background-position: center center;
   }
 }
+
+/*
+ * Responsive:End
+**/
+
+/*
+ * Aside:Start
+**/
+.aside {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .4);
+}
+.aside-button--close {
+  padding: 10px 10px 0 0;
+  text-align: right;
+  width: 100%;
+  cursor: pointer;
+  opacity: .75;
+}
+.aside-button--close:hover {
+  opacity: 1;
+}
+.aside-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 320px;
+  background: #EFEFEF;
+  z-index: 100;
+}
+.aside-header {
+  padding: 0 10px;
+  font-weight: bold;
+}
+.aside-body__list {
+  padding: 0 10px;
+  height: 30px;
+  line-height: 30px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  cursor: pointer;
+}
+.aside-body__list:hover {
+  background: rgba(0, 0, 0, .1)
+}
+/*
+ * Aside:Start
+**/
+
+/*
+ * Bar:Start
+**/
+.bar:hover {
+  opacity: .75;
+}
+.bar {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 24px;
+  height: 24px;
+}
+.bar-item {
+  width: 100%;
+  height: 4px;
+  background: white;
+  margin: 0 0 4px 0;
+}
+/*
+ * Bar:Start
+**/

@@ -1,13 +1,47 @@
 <header class='header'>
-  <h1>RSS Insight</h1>
+  <h1>RSS Insight
+    <span class='h4 js-show-sidebar'>
+      <div class='bar'>
+        <div class='bar-item'></div>
+        <div class='bar-item'></div>
+        <div class='bar-item'></div>
+      </div>
+    </span>
+  </h1>
 </header>
 
-<input class="search" type="search" name="rss" value="http://rss.cnn.com/rss/money_markets.rss">
+<div class='search'>
+  <input class='search-input' type="search" name="rss" placeholder="Enter a RSS link here">
+</div>
 <p class='hint'></p>
-<div class='recent-searches'></div>
 
-<main></main>
+<div class='aside'>
+  <aside class='aside-content'>
+    <div class='js-hide-sidebar aside-button--close'>Close</div>
+    <div class='aside-header'>
+      <div class='title'>History</div>
+    </div>
+    <div class='aside-body description'></div>
+  </aside>
+</div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
-<script type="text/javascript" src="/js/primus.js"></script>
-<script type="text/javascript" src="/js/main.js"></script>
+<div class='wrapper'>
+  <main class='main col-12'></main>
+</div>
+
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/5.0.1/Rx.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+<script
+  type="text/javascript"
+  src="/js/primus.js"></script>
+<script
+  type="text/javascript"
+  src="/js/main.js"></script>

@@ -1,49 +1,48 @@
-# koa-rss
+# RSS Insight
 
-This is a simple RSS feed reader with koa.js and Primus.
+RSS Feed built with JavaScript.
 
+Server side is powered by `koa`, `primus` and `feedparser`.
 
-You have to include the primus code on the client side to use this feature.
+Client side is powered by `jQuery`, `moment`, `rx.js`.
 
-The api is hosted [here]( https://rss-service.herokuapp.com/)
+View the working example [here](https://rss-service.herokuapp.com/). Designed by alextanhongpin.
 
-To connect to the RSS, just add the websocket connection:
-```
+Websocket endpoint:
+
+```javascript
 const primus = new Primus('ws://rss-service.herokuapp.com/')
 ```
 
-To publish to the websocket event:
-```javascript
-    primus.write({
-        action: 'server:get_all', 
-        payload: {
-            // Array of rss links
-            urls: ['']
-        }
-    })
-```
+Request:
 
-Subscribe to the websocket event to get the latest feeds:
-```
-primus.on('data', (data) => {
-    if (data.action === 'client:get_all') {
-        if (data.payload && data.payload.feeds) {
-            const div = document.createElement('li')
-            const rss = data.payload.feeds
-            const title = rss.title
-            const summary = rss.summary
-            const image = rss.image.url
-            const origLink = rss.meta.origLink
-            const pubDate = rss.meta.pubDate
-        }
+```javascript
+primus.write({
+    action: 'server:publish', 
+    payload: {
+        // Array of rss links
+        urls: ['']
     }
 })
 ```
 
-TODO:
-+ Update UI
-+ LocalStorage to store favorited RSS links
-+ Update Primus code
-+ Add schema for request/response
-+ Add api documentation
-+ Add working example at heroku
+Response:
+
+```javascript
+primus.on('data', (data) => {
+    const rss = data.payload
+    const error = data.error
+    const action = data.action
+
+    if (error) handleError(error)
+    if (action === 'client:subscribe') {
+        if (rss) {
+            const title = rss.title
+            const summary = rss.summary
+            const image = rss.image.url
+            const link = rss.link
+            const pubdate = rss.pubdate
+        }
+    }
+})
+```
