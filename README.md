@@ -8,6 +8,8 @@ Client side is powered by `jQuery`, `moment`, `rx.js`.
 
 View the working example [here](https://rss-service.herokuapp.com/). Designed by alextanhongpin.
 
+![Sample Screenshot](/Snip20170211_2.png.png)
+
 Websocket endpoint:
 
 ```javascript
