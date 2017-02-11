@@ -61,9 +61,7 @@ exports.default = function (server) {
           } else {
             spark.write({
               action: 'client:publish',
-              payload: {
-                rss: response
-              }
+              payload: response
             });
           }
         });
